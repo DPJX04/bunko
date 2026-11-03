@@ -1,0 +1,72 @@
+name: light_novel_downloader
+description: "Personal app: browse linovelib and download volumes as EPUB."
+publish_to: 'none'
+version: 1.0.0+10
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  # Rewrites the packed EPUB to add the EPUB 2 cover tag. Same major
+  # version bili_novel_packer uses.
+  animations: ^2.2.0
+  archive: ^4.0.9
+  # Scraping, paragraph restore and EPUB building. MIT license.
+  # Pinned to v0.2.50 (2026-10-31). When bumping it, port upstream's
+  # changes to novel_packer.dart into lib/repositories/volume_packer.dart.
+  bili_novel_packer:
+    git:
+      url: https://github.com/Montaro2017/bili_novel_packer.git
+      ref: b75b1fb518fb8ba76623ac8328fafdfd25e065df
+  dio: ^5.11.1
+  flutter:
+    sdk: flutter
+  # English and Chinese for the app's own words, through Flutter's own
+  # gen-l10n: the ARB files in lib/l10n/ and l10n.yaml.
+  flutter_localizations:
+    sdk: flutter
+  flutter_inappwebview: 6.2.0-beta.3
+  flutter_riverpod: ^3.4.3
+  go_router: ^17.5.0
+  html: ^0.15.7
+  # The version flutter_localizations pins.
+  intl: any
+  logger: ^2.8.0
+  path_provider: ^2.1.6
+  shared_preferences: ^2.5.6
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  integration_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  # Writes the launcher icons from assets/icon/ (dart run icons_launcher:create).
+  # MIT; flutter_launcher_icons has had no release since June 2025.
+  icons_launcher: ^3.1.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/fonts/Archivo-OFL.txt
+  fonts:
+    # Archivo variable font (width and weight axes), SIL OFL 1.1, from
+    # github.com/google/fonts. Chinese glyphs fall back to the system font.
+    - family: Archivo
+      fonts:
+        - asset: assets/fonts/Archivo-Variable.ttf
+
+# The launcher icon: a chibi girl peeking in from the bottom left (owner's
+# pick, 2026-11-03). The foreground is the whole 108 dp layer: the picture
+# sits with its left and bottom edges on the edges of the 72 dp the launcher
+# shows, so she still peeks in from the corner, and its own background
+# colour fills the rest. icon.png is that visible 72 dp, for old launchers.
+icons_launcher:
+  image_path: "assets/icon/icon.png"
+  platforms:
+    android:
+      enable: true
+      adaptive_background_color: "#131112"
+      adaptive_foreground_image: "assets/icon/icon_foreground.png"

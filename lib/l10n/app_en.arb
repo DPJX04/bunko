@@ -1,0 +1,294 @@
+{
+  "@@locale": "en",
+  "tabBrowse": "BROWSE",
+  "@tabBrowse": {
+    "description": "Navigation bar label of the Browse tab."
+  },
+  "tabDownloads": "DOWNLOADS",
+  "@tabDownloads": {
+    "description": "Navigation bar label of the Downloads tab, and its screen title."
+  },
+  "tabLibrary": "LIBRARY",
+  "@tabLibrary": {
+    "description": "Navigation bar label of the Library tab, and its screen title."
+  },
+  "queueCount": "{count} in the queue",
+  "@queueCount": {
+    "description": "What TalkBack reads for the count badge on the Downloads tab.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "browseHome": "Site home",
+  "@browseHome": {
+    "description": "Tooltip of the Home button on the Browse strip."
+  },
+  "browseBack": "Back",
+  "@browseBack": {
+    "description": "Tooltip of the Back button on the Browse strip."
+  },
+  "downloadVolumesTooltip": "Download volumes",
+  "@downloadVolumesTooltip": {
+    "description": "Tooltip of the Download button on a book page."
+  },
+  "download": "DOWNLOAD",
+  "@download": {
+    "description": "The Download button on a book page, and the picker button with nothing ticked."
+  },
+  "retry": "RETRY",
+  "@retry": {
+    "description": "Button that tries a failed page or download again."
+  },
+  "open": "OPEN",
+  "@open": {
+    "description": "Button that opens a saved volume in a reader app."
+  },
+  "view": "VIEW",
+  "@view": {
+    "description": "Snackbar button that goes to the Downloads tab."
+  },
+  "browseBooks": "BROWSE BOOKS",
+  "@browseBooks": {
+    "description": "Empty state button that goes to the Browse tab."
+  },
+  "errorPageDidNotLoad": "The page did not load. Tap Retry.",
+  "errorNoInternet": "No internet connection. Check Wi‑Fi and tap Retry.",
+  "errorTooSlow": "The site took too long to answer. Tap Retry.",
+  "errorBlocked": "The site blocked the request. Open the book page in Browse once, then tap Retry.",
+  "errorTooManyRequests": "Too many requests. Wait a minute, then tap Retry.",
+  "errorNotFound": "This page was not found on the site.",
+  "errorPageChanged": "The site page looked different than expected. The app may need an update.",
+  "errorCouldNotSave": "Could not save the file. Check free space on the phone.",
+  "errorFileMissing": "This file is no longer in Download/LightNovel. Download the volume again.",
+  "errorNoReader": "No app on this phone opens EPUB files. Install a reader such as eBoox.",
+  "errorCancelled": "Cancelled.",
+  "errorSomethingWentWrong": "Something went wrong. Tap Retry.",
+  "clear": "CLEAR",
+  "@clear": {
+    "description": "Downloads app bar button that removes saved rows."
+  },
+  "clearTooltip": "Remove saved rows. The files stay.",
+  "downloadsEmptyTitle": "No downloads running",
+  "downloadsEmptyMessage": "Open a book in Browse and tap Download. Volumes wait here in order and download one at a time.",
+  "downloadVolumes": "{count, plural, =1{DOWNLOAD 1 VOLUME} other{DOWNLOAD {count} VOLUMES}}",
+  "@downloadVolumes": {
+    "description": "Picker button with volumes ticked.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadMerged": "DOWNLOAD {count} AS ONE EPUB",
+  "@downloadMerged": {
+    "description": "Picker button with several volumes ticked and merging on.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "thisBook": "This book",
+  "@thisBook": {
+    "description": "Picker heading when the page gave no book title."
+  },
+  "siteId": "LINOVELIB #{bookId}",
+  "@siteId": {
+    "description": "The book id on the site, under the picker heading.",
+    "placeholders": {
+      "bookId": {
+        "type": "String"
+      }
+    }
+  },
+  "authorAndSiteId": "{author} · LINOVELIB #{bookId}",
+  "@authorAndSiteId": {
+    "placeholders": {
+      "author": {
+        "type": "String"
+      },
+      "bookId": {
+        "type": "String"
+      }
+    }
+  },
+  "readingContents": "Reading the table of contents.",
+  "selectAll": "SELECT ALL",
+  "chapterCount": "{count, plural, =1{1 CHAPTER} other{{count} CHAPTERS}}",
+  "@chapterCount": {
+    "description": "A volume row in the picker.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "markInDownloads": " · IN DOWNLOADS",
+  "@markInDownloads": {
+    "description": "Follows the chapter count of a volume already waiting or downloading."
+  },
+  "markSaved": " · SAVED",
+  "@markSaved": {
+    "description": "Follows the chapter count of a volume already saved."
+  },
+  "cancelTitle": "Cancel {title}?",
+  "@cancelTitle": {
+    "description": "Question of the cancel dialog, with the volume title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelRunning": "It stops before its next chapter, and nothing is saved.",
+  "cancelWaiting": "It leaves the queue before it starts.",
+  "cancelDownload": "CANCEL DOWNLOAD",
+  "keep": "KEEP",
+  "@keep": {
+    "description": "Dialog button that keeps the download."
+  },
+  "cancelDownloadTooltip": "Cancel download",
+  "statusWaiting": "WAITING",
+  "statusSaved": "SAVED",
+  "statusFailed": "FAILED",
+  "savedToFolder": "Saved to Download/LightNovel",
+  "volumesAdded": "{count, plural, =1{1 volume added} other{{count} volumes added}}",
+  "@volumesAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "volumesAddedMerged": "{count, plural, =1{1 volume added as one EPUB} other{{count} volumes added as one EPUB}}",
+  "@volumesAddedMerged": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "savedVolume": "Saved {title}",
+  "@savedVolume": {
+    "description": "Snackbar when a volume is saved.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Tooltip of the Settings button on Library."
+  },
+  "libraryEmptyTitle": "No volumes yet",
+  "libraryEmptyMessage": "Every volume you download is saved to Download/LightNovel and listed here by book, ready to open in your reader. After a reinstall, pick that folder in Settings → Library folder to bring them back.",
+  "volumeCount": "{count, plural, =1{1 VOLUME} other{{count} VOLUMES}}",
+  "@volumeCount": {
+    "description": "Under a book title on Library.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "opensInReader": "Opens in your reader",
+  "@opensInReader": {
+    "description": "What TalkBack says a Library row does."
+  },
+  "showVolumes": "Shows its volumes",
+  "@showVolumes": {
+    "description": "What TalkBack says a folded book header does."
+  },
+  "hideVolumes": "Hides its volumes",
+  "@hideVolumes": {
+    "description": "What TalkBack says an open book header does."
+  },
+  "savedOn": "SAVED {date}",
+  "@savedOn": {
+    "description": "Under a volume on Library, with the day it was saved.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dayMonth": "{day} {month, select, 1{JAN} 2{FEB} 3{MAR} 4{APR} 5{MAY} 6{JUN} 7{JUL} 8{AUG} 9{SEP} 10{OCT} 11{NOV} 12{DEC} other{}}",
+  "@dayMonth": {
+    "description": "A short date, such as 3 NOV. month is 1 to 12.",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsTitle": "SETTINGS",
+  "mergeVolumes": "Merge volumes",
+  "mergeVolumesDetail": "Volumes ticked together become one EPUB, each volume a section of its contents.",
+  "theme": "Theme",
+  "themeDetail": "System follows the phone's dark mode.",
+  "themeSystem": "SYSTEM",
+  "themeLight": "LIGHT",
+  "themeDark": "DARK",
+  "language": "Language",
+  "languageDetail": "The app's own words. Book titles and the site stay in Chinese.",
+  "about": "About",
+  "aboutDetail": "What the app is built on, and its licences.",
+  "aboutTitle": "ABOUT",
+  "aboutWhat": "Browse linovelib, download volumes as EPUB with their illustrations in place, and read them in your own reader.",
+  "aboutDownloadOnly": "Bunko is made for downloading. Read the saved volumes in your reader app; reading chapters on the site inside Bunko is not recommended, as the site can stop the page scrolling when it notices its ads are blocked.",
+  "@aboutDownloadOnly": {
+    "description": "About screen: the app is for downloading, not for reading on the site."
+  },
+  "aboutBuiltOn": "Built on bili_novel_packer by Montaro2017 (MIT licence), which reads the site, restores the paragraph order and builds each EPUB.",
+  "aboutPersonal": "Downloads are for your own reading. Please do not share the files.",
+  "openSourceLicences": "OPEN SOURCE LICENCES",
+  "noticeDownloading": "Downloading {title}",
+  "@noticeDownloading": {
+    "description": "Title of the download notification.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "noticeMoreWaiting": "{percent}% · {count} more waiting",
+  "@noticeMoreWaiting": {
+    "description": "Text of the download notification.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "volumeNumber": "Volume {number}",
+  "@volumeNumber": {
+    "description": "A volume on Library whose name is its book title and a number, such as Volume 4.5.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryFolder": "Library folder",
+  "@libraryFolder": {
+    "description": "Settings: the folder downloads go to and Library lists."
+  },
+  "libraryFolderDetail": "Downloads are saved here, and Library lists the EPUBs in it. After reinstalling Bunko, pick this folder again to bring back saved volumes.",
+  "changeFolder": "CHANGE",
+  "@changeFolder": {
+    "description": "Opens Android's folder picker for the library folder."
+  },
+  "useDefaultFolder": "USE DEFAULT",
+  "@useDefaultFolder": {
+    "description": "Goes back to Download/LightNovel as the library folder."
+  }
+}

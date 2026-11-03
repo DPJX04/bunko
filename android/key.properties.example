@@ -1,0 +1,7 @@
+# Copy this file to key.properties (which git ignores) and fill in the
+# passwords you chose when making the keystore. Never commit key.properties
+# or the keystore.
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=bunko
+storeFile=C:/Users/DPJX04/bunko-release.jks

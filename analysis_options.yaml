@@ -1,0 +1,18 @@
+# Analyzer settings. Strict casts and raw types stop `dynamic` from leaking
+# through the app, the same way TypeScript code bans `any`.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-raw-types: true
+  errors:
+    prefer_const_constructors: warning
+
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_print
+    - file_names
+    - prefer_const_constructors
+    - prefer_final_locals
