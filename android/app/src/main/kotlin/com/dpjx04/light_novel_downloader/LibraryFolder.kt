@@ -148,7 +148,11 @@ object LibraryFolder {
         val end = (tailLength - 22 downTo 0).firstOrNull { tail.getInt(it) == END_RECORD } ?: return null
         val count = tail.getShort(end + 10).toInt() and 0xffff
         val directoryLength = tail.getInt(end + 12)
-        val directory = read(channel, tail.getInt(end + 16).toLong() and 0xffffffffL, directoryLength)
+        val directoryStart = tail.getInt(end + 16).toLong() and 0xffffffffL
+        // The sizes come from the file itself; a broken or crafted one must
+        // not make this allocate more than a real EPUB ever needs.
+        if (directoryLength !in 0..MAX_DIRECTORY || directoryStart + directoryLength > size) return null
+        val directory = read(channel, directoryStart, directoryLength)
         var at = 0
         repeat(count) {
             if (directory.getInt(at) != DIRECTORY_ENTRY) return null
@@ -160,7 +164,8 @@ object LibraryFolder {
             val commentLength = directory.getShort(at + 32).toInt() and 0xffff
             val local = directory.getInt(at + 42).toLong() and 0xffffffffL
             val name = ByteArray(nameLength).also { directory.position(at + 46); directory.get(it) }
-            if (String(name, Charsets.UTF_8).endsWith(".opf") && packed in 0..MAX_OPF && unpacked in 0..MAX_OPF) {
+            val fits = packed in 0..MAX_OPF && unpacked in 0..MAX_OPF && local + 30 + packed <= size
+            if (String(name, Charsets.UTF_8).endsWith(".opf") && fits) {
                 val header = read(channel, local, 30)
                 val start = local + 30 + (header.getShort(26).toInt() and 0xffff) + (header.getShort(28).toInt() and 0xffff)
                 val bytes = ByteArray(packed).also { read(channel, start, packed).get(it) }
@@ -206,4 +211,10 @@ object LibraryFolder {
 
     /** A package file is a few kilobytes; anything near this is not one. */
     private const val MAX_OPF = 4 * 1024 * 1024
+
+    /**
+     * About 80 bytes per entry, so even an EPUB of tens of thousands of files
+     * fits; anything larger is not a real EPUB.
+     */
+    private const val MAX_DIRECTORY = 8 * 1024 * 1024
 }

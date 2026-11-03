@@ -1,7 +1,7 @@
 name: light_novel_downloader
 description: "Personal app: browse linovelib and download volumes as EPUB."
 publish_to: 'none'
-version: 1.0.0+10
+version: 1.0.1+11
 
 environment:
   sdk: ^3.12.2
